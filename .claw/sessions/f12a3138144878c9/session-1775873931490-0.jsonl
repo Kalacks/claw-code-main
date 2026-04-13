@@ -1,4 +1,0 @@
-{"created_at_ms":1775873931490,"session_id":"session-1775873931490-0","type":"session_meta","updated_at_ms":1775873942363,"version":1}
-{"text":"你好","timestamp_ms":1775873937670,"type":"prompt_history"}
-{"message":{"blocks":[{"text":"你好","type":"text"}],"role":"user"},"type":"message"}
-{"message":{"blocks":[{"text":"你好！我是您的编程助手。我看到您在一个 Rust 项目的工作目录中（E:\\360Downloads\\claw-code-main）。有什么我可以帮助您的吗？比如：\n\n- 查看项目结构\n- 运行代码检查或测试\n- 修改代码文件\n- 解释项目功能\n- 其他编程任务\n\n请告诉我您需要什么帮助！","type":"text"}],"role":"assistant","usage":{"cache_creation_input_tokens":0,"cache_read_input_tokens":5120,"input_tokens":38,"output_tokens":74}},"type":"message"}

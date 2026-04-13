@@ -1,4 +1,0 @@
-{"created_at_ms":1775870687673,"session_id":"session-1775870687673-0","type":"session_meta","updated_at_ms":1775870698310,"version":1}
-{"text":"你好","timestamp_ms":1775870691880,"type":"prompt_history"}
-{"message":{"blocks":[{"text":"你好","type":"text"}],"role":"user"},"type":"message"}
-{"message":{"blocks":[{"text":"你好！我是您的AI助手，可以帮您处理软件工程任务。我看到您的工作目录中有一个Rust项目（`claw-code-main`），并且有相关的开发指导文件。\n\n有什么我可以帮您做的吗？比如：\n- 查看项目结构\n- 运行代码检查或测试\n- 修改代码文件\n- 分析现有代码\n- 或者其他编程任务\n\n请告诉我您需要什么帮助！","type":"text"}],"role":"assistant","usage":{"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":5158,"output_tokens":87}},"type":"message"}

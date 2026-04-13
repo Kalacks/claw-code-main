@@ -1,6 +1,0 @@
-{"created_at_ms":1775632192313,"session_id":"session-1775632192313-0","type":"session_meta","updated_at_ms":1775632202288,"version":1}
-{"text":"1","timestamp_ms":1775632196754,"type":"prompt_history"}
-{"message":{"blocks":[{"text":"1","type":"text"}],"role":"user"},"type":"message"}
-{"message":{"blocks":[{"text":"I see you've entered \"1\". How can I help you with your Rust project today? I'm ready to assist with any software engineering tasks you need.","type":"text"}],"role":"assistant","usage":{"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":5089,"output_tokens":32}},"type":"message"}
-{"text":"你现在在使用哪个api","timestamp_ms":1775632223045,"type":"prompt_history"}
-{"message":{"blocks":[{"text":"你现在在使用哪个api","type":"text"}],"role":"user"},"type":"message"}

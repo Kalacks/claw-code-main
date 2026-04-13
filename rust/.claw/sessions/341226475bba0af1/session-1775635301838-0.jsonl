@@ -1,4 +1,0 @@
-{"created_at_ms":1775635301838,"session_id":"session-1775635301838-0","type":"session_meta","updated_at_ms":1775635330843,"version":1}
-{"text":"说一段话","timestamp_ms":1775635325629,"type":"prompt_history"}
-{"message":{"blocks":[{"text":"说一段话","type":"text"}],"role":"user"},"type":"message"}
-{"message":{"blocks":[{"text":"你好！我是Claude，很高兴为你提供帮助。我看到你目前在一个Rust项目的工作目录中，项目位于`E:\\360Downloads\\claw-code-main\\rust`。我可以帮助你进行代码编辑、文件操作、运行命令等各种软件工程任务。\n\n有什么我可以为你做的吗？比如查看项目结构、阅读代码、运行测试，或者帮助你实现某个功能？","type":"text"}],"role":"assistant","usage":{"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":5091,"output_tokens":77}},"type":"message"}

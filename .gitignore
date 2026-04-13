@@ -2,6 +2,8 @@ __pycache__/
 archive/
 .omx/
 .clawd-agents/
+.claw/
+.clawd-todos.json
 # Claude Code local artifacts
 .claude/settings.local.json
 .claude/sessions/
@@ -11,3 +13,9 @@ venv/
 rust/target/
 target/
 debug.log
+rust/.claude/
+rust/.claw/
+rust/.clawd-todos.json
+rust/.cargo-target-*/
+rust/target*/
+rust/dist.zip
