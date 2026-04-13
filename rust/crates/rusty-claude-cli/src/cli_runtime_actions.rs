@@ -1,0 +1,139 @@
+﻿use std::env;
+use std::path::PathBuf;
+
+use super::{
+    build_runtime, execute_app_controller_action, execute_thread_controller_action,
+    format_thread_saved_report, format_thread_switched_report, parse_app_command,
+    parse_thread_command, AppCommandEffect, AppRunTarget, ControllerDispatch, LiveCli, Session,
+    SessionHandle, ThreadCommandEffect,
+};
+use crate::controller_layer;
+
+pub(super) fn handle_thread_command(
+    cli: &mut LiveCli,
+    args: Option<&str>,
+) -> Result<(), Box<dyn std::error::Error>> {
+    match parse_thread_command(args, cli.thread_store.active_thread_name()) {
+        ControllerDispatch::Message(message) => println!("{message}"),
+        ControllerDispatch::Action(action) => {
+            match execute_thread_controller_action(&mut cli.thread_store, action)? {
+                ControllerDispatch::Message(message) => println!("{message}"),
+                ControllerDispatch::Action(effect) => apply_thread_effect(cli, effect)?,
+            }
+        }
+    }
+    Ok(())
+}
+
+pub(super) fn handle_app_command(
+    cli: &mut LiveCli,
+    args: Option<&str>,
+) -> Result<(), Box<dyn std::error::Error>> {
+    match parse_app_command(args) {
+        ControllerDispatch::Message(message) => println!("{message}"),
+        ControllerDispatch::Action(action) => {
+            match execute_app_controller_action(&mut cli.thread_store, action)? {
+                ControllerDispatch::Message(message) => println!("{message}"),
+                ControllerDispatch::Action(AppCommandEffect::Run { target, .. }) => {
+                    run_app_target(cli, target)?;
+                }
+            }
+        }
+    }
+    Ok(())
+}
+
+fn apply_thread_effect(
+    cli: &mut LiveCli,
+    effect: ThreadCommandEffect,
+) -> Result<(), Box<dyn std::error::Error>> {
+    match effect {
+        ThreadCommandEffect::Add { draft } => apply_thread_add(cli, draft),
+        ThreadCommandEffect::Switch { target } => apply_thread_switch(cli, target),
+    }
+}
+
+fn apply_thread_add(
+    cli: &mut LiveCli,
+    draft: controller_layer::PreparedThreadAdd,
+) -> Result<(), Box<dyn std::error::Error>> {
+    let session_path = PathBuf::from(&draft.record.session_path);
+    if !session_path.exists() {
+        Session::new()
+            .with_persistence_path(session_path.clone())
+            .save_to_path(&session_path)?;
+    }
+    cli.thread_store.upsert_thread(draft.record.clone())?;
+    println!(
+        "{}",
+        format_thread_saved_report(
+            &draft.record.name,
+            &draft.folder_path,
+            &draft.record.session_id,
+            &session_path
+        )
+    );
+    Ok(())
+}
+
+fn apply_thread_switch(
+    cli: &mut LiveCli,
+    target: controller_layer::PreparedThreadSwitch,
+) -> Result<(), Box<dyn std::error::Error>> {
+    if !target.folder_path.exists() {
+        println!(
+            "thread folder does not exist: {}",
+            target.folder_path.display()
+        );
+        return Ok(());
+    }
+
+    // 线程切换需要同时更新 cwd、会话文件和 runtime，这里集中处理，避免主入口继续膨胀。
+    env::set_current_dir(&target.folder_path)?;
+    let session = Session::load_from_path(&target.session_path)?;
+    let session_id = session.session_id.clone();
+    let runtime = build_runtime(
+        session,
+        &session_id,
+        cli.model.clone(),
+        cli.system_prompt.clone(),
+        true,
+        true,
+        cli.allowed_tools.clone(),
+        cli.permission_mode,
+        None,
+        cli.active_llm_profile(),
+        cli.turn_token_limits,
+    )?;
+    cli.replace_runtime(runtime)?;
+    cli.session = SessionHandle {
+        id: session_id,
+        path: target.session_path.clone(),
+    };
+    cli.thread_store.set_active_thread(&target.thread.name)?;
+    println!(
+        "{}",
+        format_thread_switched_report(
+            &target.thread.name,
+            &target.folder_path,
+            &cli.session.id,
+            &cli.session.path
+        )
+    );
+    Ok(())
+}
+
+fn run_app_target(
+    cli: &mut LiveCli,
+    target: AppRunTarget,
+) -> Result<(), Box<dyn std::error::Error>> {
+    match target {
+        AppRunTarget::Slash(command) => {
+            let _ = cli.handle_repl_command(command)?;
+        }
+        AppRunTarget::Prompt(prompt) => {
+            cli.run_turn(&prompt)?;
+        }
+    }
+    Ok(())
+}

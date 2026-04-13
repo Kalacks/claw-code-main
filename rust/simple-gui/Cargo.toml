@@ -1,0 +1,17 @@
+[package]
+name = "simple-gui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = "0.27"
+egui = "0.27"
+
+[workspace]
+
+[profile.release]
+opt-level = "z"  # 最小化大小
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

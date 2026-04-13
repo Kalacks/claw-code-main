@@ -1,0 +1,83 @@
+{
+  "threads": [
+    {
+      "name": "1",
+      "folder": "E:\\360Downloads\\claw-code-main\\rust\\1",
+      "session_id": "session-1775709715867-3",
+      "session_path": "E:\\360Downloads\\claw-code-main\\rust\\1\\.claw\\sessions\\fbafdc37bd9cc972\\session-1775709715867-3.jsonl",
+      "description": null
+    },
+    {
+      "name": "11",
+      "folder": "E:\\360Downloads",
+      "session_id": "session-1775703060763-1",
+      "session_path": "E:\\360Downloads\\.claw\\sessions\\54208cb8f235a2ba\\session-1775703060763-1.jsonl",
+      "description": "1"
+    },
+    {
+      "name": "2",
+      "folder": "E:\\360Downloads\\claw-code-main\\rust\\1",
+      "session_id": "session-1775709749471-5",
+      "session_path": "E:\\360Downloads\\claw-code-main\\rust\\1\\.claw\\sessions\\fbafdc37bd9cc972\\session-1775709749471-5.jsonl",
+      "description": null
+    },
+    {
+      "name": "3",
+      "folder": "E:\\360Downloads\\claw-code-main\\rust\\1",
+      "session_id": "session-1775805901071-1",
+      "session_path": "E:\\360Downloads\\claw-code-main\\rust\\1\\.claw\\sessions\\fbafdc37bd9cc972\\session-1775805901071-1.jsonl",
+      "description": null
+    },
+    {
+      "name": "test",
+      "folder": "E:\\test",
+      "session_id": "session-1775805932131-3",
+      "session_path": "E:\\test\\.claw\\sessions\\9ecea271e00b435e\\session-1775805932131-3.jsonl",
+      "description": null
+    },
+    {
+      "name": "test2",
+      "folder": "E:\\test",
+      "session_id": "session-1775805938107-5",
+      "session_path": "E:\\test\\.claw\\sessions\\9ecea271e00b435e\\session-1775805938107-5.jsonl",
+      "description": null
+    },
+    {
+      "name": "claw-code-main",
+      "folder": "E:\\360Downloads\\claw-code-main",
+      "session_id": "session-1775832941914-5",
+      "session_path": "E:\\360Downloads\\claw-code-main\\.claw\\sessions\\f12a3138144878c9\\session-1775832941914-5.jsonl",
+      "description": null
+    },
+    {
+      "name": "claw-code-main1",
+      "folder": "E:\\360Downloads\\claw-code-main",
+      "session_id": "session-1775834494216-1",
+      "session_path": "E:\\360Downloads\\claw-code-main\\.claw\\sessions\\f12a3138144878c9\\session-1775834494216-1.jsonl",
+      "description": null
+    },
+    {
+      "name": "claw-code-main2",
+      "folder": "E:\\360Downloads\\claw-code-main",
+      "session_id": "session-1775835089866-3",
+      "session_path": "E:\\360Downloads\\claw-code-main\\.claw\\sessions\\f12a3138144878c9\\session-1775835089866-3.jsonl",
+      "description": null
+    },
+    {
+      "name": "claw-code-main3",
+      "folder": "E:\\360Downloads\\claw-code-main",
+      "session_id": "session-1776042717277-6",
+      "session_path": "E:\\360Downloads\\claw-code-main\\.claw\\sessions\\f12a3138144878c9\\session-1776042717277-6.jsonl",
+      "description": null
+    },
+    {
+      "name": "claw-code-main4",
+      "folder": "E:\\360Downloads\\claw-code-main",
+      "session_id": "session-1776042816910-8",
+      "session_path": "E:\\360Downloads\\claw-code-main\\.claw\\sessions\\f12a3138144878c9\\session-1776042816910-8.jsonl",
+      "description": null
+    }
+  ],
+  "active_thread": "test2",
+  "apps": []
+}

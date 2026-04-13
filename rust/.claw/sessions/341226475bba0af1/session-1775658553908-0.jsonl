@@ -1,0 +1,4 @@
+{"created_at_ms":1775658553908,"session_id":"session-1775658553908-0","type":"session_meta","updated_at_ms":1775658580748,"version":1}
+{"text":"你现在在使用哪个 API","timestamp_ms":1775658575083,"type":"prompt_history"}
+{"message":{"blocks":[{"text":"你现在在使用哪个 API","type":"text"}],"role":"user"},"type":"message"}
+{"message":{"blocks":[{"text":"根据当前连接信息，我正在使用以下API：\n\n- **提供商 (Provider):** deepseek\n- **模型 (Model):** deepseek-chat\n- **基础URL (Base URL):** https://api.deepseek.com\n\n请注意，我不是Claude模型，而是通过DeepSeek API连接的模型。","type":"text"}],"role":"assistant","usage":{"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":5166,"output_tokens":64}},"type":"message"}

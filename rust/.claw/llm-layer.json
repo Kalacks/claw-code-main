@@ -1,0 +1,38 @@
+{
+  "profiles": [
+    {
+      "name": "deepseek-main",
+      "provider": "deepseek",
+      "model": "deepseek-chat",
+      "base_url": "https://api.deepseek.com",
+      "api_key": null,
+      "api_key_env": "deepseek",
+      "note": null
+    },
+    {
+      "name": "DS",
+      "provider": "deepseek",
+      "model": "deepseek-chat",
+      "base_url": "https://api.deepseek.com",
+      "api_key": "sk-0d2e9be1334545f18825058bd81781ec",
+      "api_key_env": null,
+      "note": null
+    },
+    {
+      "name": "QWEN_API_KEY",
+      "provider": "qwen",
+      "model": "qwen-max",
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "api_key": "sk-9be4639210db4044af3a924f566be897",
+      "api_key_env": null,
+      "note": null
+    }
+  ],
+  "active_profile": "DS",
+  "turn_token_limits": {
+    "min_input_tokens": null,
+    "max_input_tokens": null,
+    "min_output_tokens": null,
+    "max_output_tokens": null
+  }
+}

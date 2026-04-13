@@ -1,0 +1,3 @@
+{"created_at_ms":1775869470955,"session_id":"session-1775869470955-0","type":"session_meta","updated_at_ms":1775869470955,"version":1}
+{"text":"E:\\test\\cli.exe \"总结这个仓库结构\"","timestamp_ms":1775869490628,"type":"prompt_history"}
+{"message":{"blocks":[{"text":"E:\\test\\cli.exe \"总结这个仓库结构\"","type":"text"}],"role":"user"},"type":"message"}

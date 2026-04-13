@@ -1,0 +1,13 @@
+__pycache__/
+archive/
+.omx/
+.clawd-agents/
+# Claude Code local artifacts
+.claude/settings.local.json
+.claude/sessions/
+venv/
+.sandbox-home/
+.sandbox-tmp/
+rust/target/
+target/
+debug.log

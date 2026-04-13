@@ -1,0 +1,52 @@
+[package]
+name = "rusty-claude-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "claw"
+path = "src/main.rs"
+
+[[bin]]
+name = "claw-gui"
+path = "src/bin/claw-gui-main.rs"
+required-features = ["gui"]
+test = false
+
+[[bin]]
+name = "claw-minimal-gui"
+path = "src/bin/minimal-gui.rs"
+required-features = ["gui"]
+test = false
+
+[features]
+default = []
+# GUI 依赖单独挂到 feature，避免默认 cargo test/workspace 校验被 Windows GUI 依赖链阻塞。
+gui = ["dep:eframe", "dep:rfd"]
+
+[dependencies]
+api = { path = "../api" }
+commands = { path = "../commands" }
+compat-harness = { path = "../compat-harness" }
+crossterm = "0.28"
+eframe = { version = "0.33", optional = true }
+pulldown-cmark = "0.13"
+rustyline = "15"
+runtime = { path = "../runtime" }
+plugins = { path = "../plugins" }
+rfd = { version = "0.15", optional = true }
+serde = { version = "1", features = ["derive"] }
+serde_json.workspace = true
+syntect = "5"
+tokio = { version = "1", features = ["rt-multi-thread", "signal", "time"] }
+tools = { path = "../tools" }
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+mock-anthropic-service = { path = "../mock-anthropic-service" }
+serde_json.workspace = true
+tokio = { version = "1", features = ["rt-multi-thread"] }
